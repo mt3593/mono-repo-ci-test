@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  lein-test:
+    docker:
+      - image: circleci/clojure:openjdk-8-lein-2.9.1
+    steps:
+      - checkout
+      - run:
+          command: |
+            cd app-1 lein test
+
+workflows:
+  version: 2
+  ccm-flow: # this is the name of our workflow
+    jobs: # and here we list the jobs we are going to run.
+      - lein-test
