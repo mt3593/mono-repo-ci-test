@@ -7,7 +7,8 @@ jobs:
       - checkout
       - run:
           command: |
-            cd app-1 lein test
+            cd app-1
+            lein test
 
 workflows:
   version: 2
